@@ -1,13 +1,15 @@
 ---
-permalink: /docs/deploying/heroku/
+title: Deploying to Heroku
+layout: layouts/docs.html
+permalink: /deploying/heroku.html
 ---
 
 # Deploying to Heroku
 
-If you've been following along with [Getting Started](../index.md), it's time to deploy so you can use it beyond just your local machine.
+If you've been following along with [Getting Started](../index.html), it's time to deploy so you can use it beyond just your local machine.
 [Heroku](http://www.heroku.com/) is an easy and supported way to deploy hubot.
 
-Install the [Heroku Toolbelt](https://toolbelt.heroku.com/) to start, then follow their 'Getting Started' instructions, including logging in the first time:
+Install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) to start, then follow their '[Getting Started](https://devcenter.heroku.com/articles/heroku-cli#getting-started)' instructions, including logging in the first time:
 
     % heroku login
     Enter your Heroku credentials.
@@ -33,7 +35,7 @@ Then create a Heroku application:
 
 Before you deploy the application, you'll need to configure some environment
 variables for hubot to use. The specific variables you'll need depends on which
-[adapter](../adapters.md) and scripts you are using. For Campfire, with no other
+[adapter](../adapters.html) and scripts you are using. For Campfire, with no other
 scripts, you'd need to set the following environment variables:
 
     % heroku config:set HUBOT_CAMPFIRE_ACCOUNT=yourcampfireaccount
@@ -43,7 +45,7 @@ scripts, you'd need to set the following environment variables:
 At this point, you are ready to deploy and start chatting. With Heroku, that's a
 git push away:
 
-    % git push heroku master
+    % git push heroku main
 
 You'll see some text flying, and eventually some success. You should be able to
 see your bot in your configured chat rooms at this point. If not, you can peek
@@ -55,7 +57,7 @@ If you make any changes to your hubot, just commit and push them as
 before:
 
     % git commit -am "Awesome scripts OMG"
-    % git push heroku master
+    % git push heroku main
 
 Some scripts needs Redis to work, Heroku offers an addon called [Redis Cloud](https://addons.heroku.com/rediscloud), which has a free plan. To use it:
 
